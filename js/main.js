@@ -140,9 +140,9 @@ document.querySelectorAll("[data-tabs]").forEach((contenedor) => {
 });
 
 // ---------- Live site embeds ----------
-// Slots with data-autoload load their iframe automatically when they
-// approach the viewport; the rest wait for a click. Either way nothing
-// is requested from third parties on first paint.
+// Embedded sites show a static preview first: their cookie banners and
+// third-party requests only appear if the visitor opts into the live
+// view. Slots with data-autoload skip the preview and load on approach.
 
 document.querySelectorAll("[data-embed]").forEach((slot) => {
     if (!slot.dataset.src) return;
@@ -156,6 +156,7 @@ document.querySelectorAll("[data-embed]").forEach((slot) => {
         iframe.referrerPolicy = "no-referrer";
 
         slot.querySelector(".embed-load")?.remove();
+        slot.querySelector(".embed-preview")?.remove();
         (slot.querySelector(".browser-frame") || slot).appendChild(iframe);
     };
 

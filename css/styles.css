@@ -488,7 +488,19 @@ a { color: var(--accent); }
     min-height: 597px;
 }
 
-.embed-load { margin: 3.2rem auto; display: flex; }
+/* Static preview with the "view live" button floating on top */
+.browser-frame-media { position: relative; }
+
+.embed-preview { width: 100%; display: block; }
+
+.embed-load {
+    position: absolute;
+    left: 50%;
+    bottom: 1.6rem;
+    transform: translateX(-50%);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+.embed-load:hover { transform: translateX(-50%) translateY(-2px); }
 
 .embed-pending {
     padding: 3rem 1.5rem;
