@@ -493,7 +493,7 @@ a { color: var(--accent); }
 
 /* height:auto overrides the height attribute so the image keeps its
    natural aspect ratio at any container width */
-.embed-preview { width: 100%; height: auto; display: block; }
+.embed-preview { width: 100%; height: auto; display: block; cursor: pointer; }
 
 .embed-load {
     position: absolute;
@@ -598,6 +598,36 @@ a { color: var(--accent); }
     font-size: 0.85rem;
 }
 
+/* ---------- Image lightbox ---------- */
+
+.zoomable { cursor: zoom-in; }
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 4vmin;
+    background: rgba(8, 12, 16, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    cursor: zoom-out;
+}
+
+.lightbox.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
 /* ---------- Reveal on scroll ---------- */
 
 .reveal {
@@ -613,6 +643,7 @@ a { color: var(--accent); }
     .reveal { opacity: 1; transform: none; transition: none; }
     .cursor { animation: none; }
     .btn:hover, .skill-card:hover { transform: none; }
+    .lightbox { transition: none; opacity: 1; }
 }
 
 /* ---------- Responsive ---------- */

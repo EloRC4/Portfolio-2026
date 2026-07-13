@@ -172,8 +172,49 @@ document.querySelectorAll("[data-embed]").forEach((slot) => {
         );
         observador.observe(slot);
     } else {
+        // Both the button and the preview image load the live site
         slot.querySelector(".embed-load")?.addEventListener("click", cargarIframe);
+        slot.querySelector(".embed-preview")?.addEventListener("click", cargarIframe);
     }
+});
+
+// ---------- Image lightbox ----------
+// Project screenshots enlarge on click. Clicking the backdrop or
+// pressing Escape closes the enlarged view. The overlay lives in the
+// DOM permanently and is toggled with a class: while hidden it has
+// pointer-events: none, so it never intercepts clicks.
+
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
+lightbox.setAttribute("role", "dialog");
+lightbox.setAttribute("aria-label", "Imagen ampliada");
+lightbox.setAttribute("aria-hidden", "true");
+const lightboxImg = document.createElement("img");
+lightbox.appendChild(lightboxImg);
+document.body.appendChild(lightbox);
+
+function abrirLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || "";
+    lightbox.classList.add("visible");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarLightbox() {
+    lightbox.classList.remove("visible");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+lightbox.addEventListener("click", cerrarLightbox);
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("visible")) cerrarLightbox();
+});
+
+document.querySelectorAll(".shots-grid img").forEach((img) => {
+    img.classList.add("zoomable");
+    img.addEventListener("click", () => abrirLightbox(img.src, img.alt));
 });
 
 // ---------- Footer year ----------
