@@ -470,7 +470,9 @@ a { color: var(--accent); }
     gap: 1rem;
 }
 
-.shots-grid img { aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
+/* width must be explicit so aspect-ratio can reserve the height
+   before the lazy image loads (prevents layout shift) */
+.shots-grid img { width: 100%; aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
 
 /* Embeds (live demos) */
 .iframe-slot iframe {
@@ -478,6 +480,12 @@ a { color: var(--accent); }
     height: 560px;
     border: 0;
     display: block;
+}
+
+/* Auto-loading slots reserve the iframe height up front so the
+   injection does not shift the content below (no layout shift) */
+.iframe-slot[data-autoload] .browser-frame {
+    min-height: 597px;
 }
 
 .embed-load { margin: 3.2rem auto; display: flex; }
@@ -624,4 +632,5 @@ a { color: var(--accent); }
     .project { padding: 1.2rem; }
 
     .iframe-slot iframe { height: 420px; }
+    .iframe-slot[data-autoload] .browser-frame { min-height: 457px; }
 }
