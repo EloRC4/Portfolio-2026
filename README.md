@@ -14,16 +14,16 @@ Portfolio personal de desarrollador web full stack. Construido a mano con HTML, 
 
 El sitio se publica automáticamente con cada push:
 
-1. Crea el repositorio `EloRC4.github.io` en GitHub.
+1. Crea el repositorio `Portfolio-2026` en GitHub.
 2. Conecta este directorio y sube el contenido:
 
    ```bash
-   git remote add origin https://github.com/EloRC4/EloRC4.github.io.git
+   git remote add origin https://github.com/EloRC4/Portfolio-2026.git
    git push -u origin main
    ```
 
-3. En *Settings → Pages*, comprueba que la fuente es la rama `main` (raíz).
-4. El portfolio queda publicado en `https://elorc4.github.io` y se actualiza solo con cada commit.
+3. En *Settings → Pages*, selecciona como fuente la rama `main` (carpeta raíz).
+4. El portfolio queda publicado en `https://elorc4.github.io/Portfolio-2026/` y se actualiza solo con cada commit. Todas las rutas del sitio son relativas, por lo que funciona igual en la raíz de un dominio propio.
 
 ## Estructura
 
