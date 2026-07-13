@@ -491,7 +491,9 @@ a { color: var(--accent); }
 /* Static preview with the "view live" button floating on top */
 .browser-frame-media { position: relative; }
 
-.embed-preview { width: 100%; display: block; }
+/* height:auto overrides the height attribute so the image keeps its
+   natural aspect ratio at any container width */
+.embed-preview { width: 100%; height: auto; display: block; }
 
 .embed-load {
     position: absolute;
