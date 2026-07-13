@@ -1,0 +1,6 @@
+# Raw resources not meant to be published
+Recursos/
+
+# OS noise
+.DS_Store
+Thumbs.db
