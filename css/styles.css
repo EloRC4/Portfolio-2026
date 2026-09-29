@@ -472,7 +472,7 @@ a { color: var(--accent); }
 
 /* width must be explicit so aspect-ratio can reserve the height
    before the lazy image loads (prevents layout shift) */
-.shots-grid img { width: 100%; aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
+.shots-grid img { width: 100%; height: auto; aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
 
 /* Embeds (live demos) */
 .iframe-slot iframe {
