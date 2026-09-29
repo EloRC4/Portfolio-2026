@@ -464,34 +464,6 @@ a { color: var(--accent); }
     color: var(--muted);
 }
 
-/* Sites that refuse to be framed: a browser-style card linking out */
-.site-card {
-    display: block;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: var(--bg-soft);
-    color: var(--ink);
-    text-decoration: none;
-    transition: border-color var(--transition), transform var(--transition);
-}
-.site-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.site-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.site-card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-    padding: 2.4rem 1.6rem;
-    background:
-        radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
-        var(--surface);
-}
-.site-card-body strong { font-size: 1.25rem; }
-.site-card-body > span:not(.btn) { color: var(--muted); }
-.site-card-body .btn { margin-top: 0.6rem; }
-@media (prefers-reduced-motion: reduce) { .site-card:hover { transform: none; } }
-
 .shots-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -500,7 +472,7 @@ a { color: var(--accent); }
 
 /* width must be explicit so aspect-ratio can reserve the height
    before the lazy image loads (prevents layout shift) */
-.shots-grid img { width: 100%; aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
+.shots-grid img { width: 100%; height: auto; aspect-ratio: 16 / 10.5; object-fit: cover; object-position: top; }
 
 /* Embeds (live demos) */
 .iframe-slot iframe {
