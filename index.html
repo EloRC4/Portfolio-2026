@@ -284,19 +284,15 @@
                     </ul>
                 </header>
 
-                <!-- fonestore.es no permite mostrarse dentro de otra web (X-Frame-Options), así que se enseña con capturas -->
-                <div class="shots-grid">
-                    <figure class="browser-frame">
-                        <figcaption class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="browser-url">fonestore.es</span></figcaption>
-                        <img src="assets/proyectos/fonestore-home.jpg" width="1600" height="778"
-                             alt="Portada de FoneStore: iPhone para empresas sin el precio de estreno, con botón para solicitar presupuesto" loading="lazy">
-                    </figure>
-                    <figure class="browser-frame">
-                        <figcaption class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="browser-url">fonestore.es — ahorro por volumen</span></figcaption>
-                        <img src="assets/proyectos/fonestore-ahorro.jpg" width="1600" height="778"
-                             alt="Sección de ventajas para empresas y cálculo del ahorro al comprar 25 iPhone reacondicionados" loading="lazy">
-                    </figure>
-                </div>
+                <!-- fonestore.es no permite mostrarse dentro de otra web (X-Frame-Options): se enseña una captura de la página que se recorre con scroll -->
+                <figure class="browser-frame page-scroll">
+                    <figcaption class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="browser-url">fonestore.es</span></figcaption>
+                    <div class="page-scroll-view" tabindex="0" role="region" aria-label="Captura de la portada de FoneStore. Desplázate dentro para verla entera">
+                        <img src="assets/proyectos/fonestore-pagina.jpg" width="1600" height="1441"
+                             alt="Portada de FoneStore: cabecera «iPhone para empresas. Sin el precio de estreno», ventajas para empresas, sección «El mismo iPhone. Más ahorro» y cálculo del ahorro al comprar 25 iPhone" loading="lazy">
+                    </div>
+                </figure>
+                <p class="media-note">Captura de la portada. Desplázate dentro del recuadro para recorrerla.</p>
 
                 <footer class="project-links">
                     <a class="btn btn-ghost" href="https://fonestore.es/" target="_blank" rel="noopener">Abrir fonestore.es</a>
@@ -322,7 +318,7 @@
                     </ul>
                 </header>
 
-                <div class="iframe-slot" data-embed data-autoload data-src="https://backiphone.com/" data-title="Web de BackiPhone">
+                <div class="iframe-slot embed-offset" style="--embed-offset: 200px" data-embed data-autoload data-src="https://backiphone.com/" data-title="Web de BackiPhone">
                     <figure class="browser-frame browser-frame-media">
                         <figcaption class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="browser-url">backiphone.com</span></figcaption>
                     </figure>
