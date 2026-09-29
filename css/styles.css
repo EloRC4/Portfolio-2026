@@ -353,6 +353,8 @@ a { color: var(--accent); }
     color: var(--accent);
 }
 
+.skill-card p { margin: 0; color: var(--muted); line-height: 1.6; }
+
 .chips {
     list-style: none;
     margin: 0;
@@ -553,6 +555,8 @@ a { color: var(--accent); }
 /* ---------- Timeline ---------- */
 
 .timeline {
+    list-style: none;
+    margin: 0;
     display: grid;
     gap: 1.6rem;
     max-width: 720px;
@@ -582,7 +586,7 @@ a { color: var(--accent); }
 }
 
 .timeline-item h3 { margin: 0.2rem 0 0.4rem; font-size: 1.15rem; }
-.timeline-item p { margin: 0; color: var(--muted); }
+.timeline-item p:not(.timeline-date) { margin: 0; color: var(--muted); }
 
 .cert-link {
     display: inline-block;
@@ -616,6 +620,15 @@ a { color: var(--accent); }
 }
 
 .contact-actions { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
+
+/* The address as plain, selectable text: mailto links do not open for everyone */
+.contact-mail {
+    margin: 1rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--muted);
+    user-select: all;
+}
 
 /* ---------- Footer ---------- */
 

@@ -1,5 +1,5 @@
 // ============================================================
-// Portfolio — EloRC4
+// Eloy — Webs para negocios
 // Theme toggle, mobile nav, scroll-spy, typed effect, reveal
 // animations, project tabs and on-demand iframe embeds.
 // ============================================================
@@ -68,10 +68,10 @@ document.querySelectorAll("main section[id]").forEach((s) => spy.observe(s));
 // ---------- Typed effect in the hero ----------
 
 const FRASES = [
-    "Java · Spring Boot · MySQL",
-    "JavaScript · React · Vite",
-    "Docker · nginx · Linux",
-    "APIs REST con Spring Security",
+    "que te encuentren en Google",
+    "que se vea bien en el móvil",
+    "que tus clientes te escriban",
+    "sin preocuparte de nada después",
 ];
 
 const nodoTyped = document.getElementById("typed");

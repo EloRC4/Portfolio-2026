@@ -1,6 +1,6 @@
-# Portfolio — EloRC4
+# Eloy — Webs para negocios
 
-Portfolio personal de desarrollador web full stack. Construido a mano con HTML, CSS y JavaScript, sin frameworks ni proceso de build: lo que hay en el repositorio es exactamente lo que se sirve.
+Web de mi servicio freelance de creación y mantenimiento de webs para negocios y pymes de Madrid: qué hago, proyectos reales, cómo trabajo y contacto. Construida a mano con HTML, CSS y JavaScript, sin frameworks ni proceso de build: lo que hay en el repositorio es exactamente lo que se sirve.
 
 ## Características
 
