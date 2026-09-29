@@ -493,13 +493,22 @@ a { color: var(--accent); }
     display: block;
 }
 
-/* Slots that start further down the embedded page: the iframe is taller by
-   --embed-offset and shifted up behind the browser bar, so the visible area
-   begins that much lower and content there loads without scrolling */
+/* Zoomed-out embeds: the site is rendered wider and taller by 1/--embed-zoom
+   and scaled down, so it looks like a desktop browser at reduced zoom.
+   --embed-offset (visual px) optionally starts the view further down the page.
+   The negative bottom margin gives back the extra layout height of the
+   unscaled iframe, so the frame keeps its normal height. */
 .browser-bar { position: relative; z-index: 1; }
-.embed-offset iframe {
-    height: calc(560px + var(--embed-offset, 0px));
+.embed-zoom { --embed-h: 560px; }
+.iframe-slot.embed-zoom iframe {
+    --z: var(--embed-zoom, 1);
+    --full: calc(var(--embed-h) + var(--embed-offset, 0px));
+    width: calc(100% / var(--z));
+    height: calc(var(--full) / var(--z));
     margin-top: calc(-1 * var(--embed-offset, 0px));
+    margin-bottom: calc(var(--full) - var(--full) / var(--z));
+    transform: scale(var(--z));
+    transform-origin: 0 0;
 }
 
 /* Auto-loading slots reserve the iframe height up front so the
@@ -697,7 +706,7 @@ a { color: var(--accent); }
     .project { padding: 1.2rem; }
 
     .iframe-slot iframe { height: 420px; }
-    .embed-offset iframe { height: calc(420px + var(--embed-offset, 0px)); }
+    .embed-zoom { --embed-h: 420px; }
     .page-scroll-view { aspect-ratio: 3 / 4; }   /* en móvil, una ventana más alta para recorrer la página */
     .iframe-slot[data-autoload] .browser-frame { min-height: 457px; }
 }
